@@ -30,23 +30,30 @@ $(document).ready(function() {
 
     console.log(moment());
 
-    function compareTime(todoBlock) {
+    function compareTime() {
 
         let currentHour = moment().hour();
-        
-        if (todoBlock < currentHour) {
-            $(this).addClass("past");
-        }
 
-        else if (todoBlock === currentHour) {
-            $(this).addClass("present");
-        }
+        $(".time-block").each(function() {
 
-        else if (todoBlock > currentHour) {
-            $(this).addClass("future");
-        }
+            let todoBlock = $(this).attr("id");
+
+            if (todoBlock < currentHour) {
+                $(this).addClass("past");
+            }
+    
+            else if (todoBlock === currentHour) {
+                $(this).addClass("present");
+            }
+    
+            else if (todoBlock > currentHour) {
+                $(this).addClass("future");
+            }
+
+        })
 
     }
 
+    compareTime();
 
 });
