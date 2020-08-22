@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
     // display current day/time
 
@@ -6,9 +6,9 @@ $(document).ready(function () {
 
     // save button function for local storage
 
-    $(".saveBtn").on("click", function () {
-        var value = $(this).siblings(".description").val();
-        var time = $(this).parent().attr("id");
+    $(".saveBtn").on("click", function() {
+        let value = $(this).siblings(".description").val();
+        let time = $(this).parent().attr("id");
 
         localStorage.setItem(time, value);
 
@@ -28,7 +28,25 @@ $(document).ready(function () {
     
     // changing block colors based on time
 
-    
+    console.log(moment());
+
+    function compareTime(todoBlock) {
+
+        let currentHour = moment().hour();
+        
+        if (todoBlock < currentHour) {
+            $(this).addClass("past");
+        }
+
+        else if (todoBlock === currentHour) {
+            $(this).addClass("present");
+        }
+
+        else if (todoBlock > currentHour) {
+            $(this).addClass("future");
+        }
+
+    }
 
 
 });
