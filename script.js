@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    // 
+    // getting started woo, this variable stores the hours of day with a value so 1pm is > 12pm instead of 1 < 12
 
     let currentDay = document.querySelector("#currentDay");
     const hoursOfDay = [9, 10, 11, 12, 13, 14, 15, 16, 17];
@@ -20,17 +20,16 @@ $(document).ready(function() {
                 $(".hour").each(function() {
                     let currentHour = moment().hour(hoursOfDay[i]);
                     currentHour.minutes(0);
+                    console.log(currentHour);
         
                     if ( currentHour.hour() < now.hour()) {
-                        $(this).parent().find("time-block").addClass("past");
+                        $(this).parent().addClass("past");
                     }
-            
-                    else if (currentHour.hour === now.hour()) {
-                        $(this).parent().find("time-block").addClass("present");
+                    else if (currentHour.hour = now.hour()) {
+                        $(this).parent().addClass("present");
                     }
-            
                     else if (currentHour.hour > now.hour()) {
-                        $(this).parent().find("time-block").addClass("future");
+                        $(this).parent().addClass("future");
                     }
                     i ++;
                 });
