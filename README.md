@@ -2,7 +2,7 @@
 
 ![GitHub top language](https://img.shields.io/github/languages/top/slothings/work-day-scheduler)
 
-Work Day Scheduler is a repository where I used a CSS, HTML, Javascript (jQuery), and a third-party API (moment.js) to create a planner for your 9AM-5PM activities. 
+Work Day Scheduler is a repository where I used CSS, HTML, Javascript (jQuery), and a third-party API (moment.js) to create a planner for your 9AM-5PM activities. 
 
 ![Application landing page](readme.JPG)
 
